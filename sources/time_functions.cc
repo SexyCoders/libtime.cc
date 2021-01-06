@@ -19,9 +19,10 @@ Time Time::getTime()
                 this->year=time.tm_year+1900;
         return *this;
         }
+
 std::string Time::toString(std::string parameter)
         {
-                if(!parameter.compare("human"))
+                if(!parameter.compare("h"))
                         {
                                 std::string DATE;
                                 DATE=this->WeekDays[this->weekday];
@@ -38,6 +39,7 @@ std::string Time::toString(std::string parameter)
                 else
                         return "NON VALID PARAMETER";
         }
+
 std::string Time::toString()
         {
                 std::string DATE;
@@ -50,6 +52,7 @@ std::string Time::toString()
                 DATE+=std::to_string(this->second)+";";
         return DATE;
         }
+
 void Time::fromString(std::string time_string)
         {
                 this->weekday=stoi(time_string.substr(0,time_string.find(";")));
