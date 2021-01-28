@@ -71,8 +71,3 @@ void Time::fromString(std::string time_string)
                 time_string.erase(0,time_string.find(";")+strlen(";"));
         }
 
-Php::Value Time::saveTime(Php::Parameters &arg)
-        {
-                this->fromString(arg[0].stringValue());
-        return 0;
-        }
