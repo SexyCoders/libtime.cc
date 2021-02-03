@@ -19,25 +19,25 @@ Time Time::getTime()
                 this->year=time.tm_year+1900;
         return *this;
         }
-std::string Time::toString(std::string parameter)
-        {
-                if(!parameter.compare("human"))
-                        {
-                                std::string DATE;
-                                DATE=this->WeekDays[this->weekday];
-                                DATE+=" ";
-                                DATE+=this->day;
-                                DATE+=" ";
-                                DATE+=this->Months[this->month];
-                                DATE+=" ";
-                                DATE+=this->year;
-                                DATE+=" ";
-                                DATE+=std::to_string(this->hour)+":"+std::to_string(this->minute)+":"+std::to_string(this->second);
-                                return DATE;
-                        }
-                else
-                        return "NON VALID PARAMETER";
-        }
+//std::string Time::toString(std::string parameter)
+        //{
+                //if(!parameter.compare("human"))
+                        //{
+                                //std::string DATE;
+                                //DATE=this->WeekDays[this->weekday];
+                                //DATE+=" ";
+                                //DATE+=this->day;
+                                //DATE+=" ";
+                                //DATE+=this->Months[this->month];
+                                //DATE+=" ";
+                                //DATE+=this->year;
+                                //DATE+=" ";
+                                //DATE+=std::to_string(this->hour)+":"+std::to_string(this->minute)+":"+std::to_string(this->second);
+                                //return DATE;
+                        //}
+                //else
+                        //return "NON VALID PARAMETER";
+        //}
 std::string Time::toString()
         {
                 std::string DATE;
@@ -68,8 +68,12 @@ void Time::fromString(std::string time_string)
                 time_string.erase(0,time_string.find(";")+strlen(";"));
         }
 
-Php::Value Time::saveTime(Php::Parameters &arg)
+unsigned long int Time::_to_min()
         {
-                this->fromString(arg[0].stringValue());
-        return 0;
+        return (((this->month-1)*43800)+((this->day-1)*1440)+(this->hour*60)+(this->minute));
+        }
+
+unsigned long int Time::min()
+        {
+        return this->_to_min();
         }

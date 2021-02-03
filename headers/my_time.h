@@ -1,0 +1,100 @@
+#include <string>
+#include <vector>
+
+#ifndef TIME_H
+#define TIME_H
+
+class Time
+	{
+		public:
+			int second;
+			int minute;
+			int hour;
+			int weekday;
+			int day;
+			int month;
+			int year;
+
+			std::vector<std::string> _week_days;
+			std::vector<std::string> _months;
+		public:
+			Time()
+				{
+					this->_week_days.push_back("Monday");
+					this->_week_days.push_back("Tuesday");
+					this->_week_days.push_back("Wednessday");
+					this->_week_days.push_back("Thursday");
+					this->_week_days.push_back("Friday");
+					this->_week_days.push_back("Saturday");
+					this->_week_days.push_back("Sunday");
+
+					this->_months.push_back("January");
+					this->_months.push_back("February");
+					this->_months.push_back("March");
+					this->_months.push_back("April");
+					this->_months.push_back("May");
+					this->_months.push_back("June");
+					this->_months.push_back("July");
+					this->_months.push_back("August");
+					this->_months.push_back("September");
+					this->_months.push_back("October");
+					this->_months.push_back("November");
+					this->_months.push_back("December");
+				}
+
+			//output functions
+			std::string toString();
+			//std::string toString(std::string);
+
+			//conversion functions
+			unsigned long int min();
+			unsigned long int _to_min();
+			
+			//input functions
+			void fromString(std::string);
+			Time getTime();
+
+			//operators
+			Time operator=(Time src);
+			int operator==(Time);
+			int operator<(int);
+			int operator>(int);
+			int operator<(Time);
+			int operator>(Time);
+
+			//operator functions
+			int _check_before_minutes(int);
+			int _check_after_minutes(int);
+
+			//getters and setters
+			int get_second(void)
+				{
+				return this->second;
+				}
+			int get_minute(void)
+				{
+				return this->minute;
+				}
+			int get_hour(void)
+				{
+				return this->hour;
+				}
+			int get_weekday(void)
+				{
+				return this->weekday;
+				}
+			int get_day(void)
+				{
+				return this->day;
+				}
+			int get_month(void)
+				{
+				return this->month;
+				}
+			int get_year(void)
+				{
+				return this->year;
+				}
+	};
+
+#endif
