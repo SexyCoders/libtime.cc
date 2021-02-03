@@ -19,15 +19,34 @@ int Time::operator==(Time comp)
                         return 0;
         return 1;
         }
+Time Time::operator=(Time src)
+	{
+		this->second=src.second;
+		this->minute=src.minute;
+		this->hour=src.hour;
+		this->weekday=src.weekday;
+		this->day=src.day;
+		this->month=src.month;
+		this->year=src.year;
+	return *this;
+	}
 
-int Time::CheckBeforeMinutes(int MIN)
+int Time::operator<(int MIN)
         {
-                Time tmp;
-                tmp.getTime();
-                int tmp_min=(((tmp.month-1)*43800)+((tmp.day-1)*1440)+(tmp.hour*60)+(tmp.minute));
-                int this_min=(((this->month-1)*43800)+((this->day-1)*1440)+(this->hour*60)+(this->minute));
-                if(this_min+MIN>=tmp_min)
-                        return 1;
-                else
-                        return 0;
+        return this->_check_before_minutes(MIN);
+        }
+
+int Time::operator>(int MIN)
+        {
+        return this->_check_after_minutes(MIN);
+        }
+
+int Time::operator<(Time comp)
+        {
+        return(this->_to_min()<comp._to_min());
+        }
+
+int Time::operator>(Time comp)
+        {
+        return(this->_to_min()>comp._to_min());
         }
