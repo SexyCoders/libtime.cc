@@ -1,18 +1,6 @@
 #include <my_time.h>
 #include <iostream>
 
-Time Time::operator=(Time src)
-        {
-                this->second=src.second;
-                this->minute=src.minute;
-                this->hour=src.hour;
-                this->weekday=src.weekday;
-                this->day=src.day;
-                this->month=src.month;
-                this->year=src.year;
-        return *this;
-        }
-
 int Time::operator==(Time comp)
         {
                 if(this->weekday!=comp.weekday)
@@ -32,26 +20,14 @@ int Time::operator==(Time comp)
         return 1;
         }
 
-int Time::operator<(int MIN)
+int Time::CheckBeforeMinutes(int MIN)
         {
-        return this->_check_before_minutes(MIN);
-        }
-
-int Time::operator>(int MIN)
-        {
-        return this->_check_before_minutes(MIN);
-        }
-
-int Time::operator<(Time comp)
-        {
-                unsigned long int tmp_min=this->min();
-                unsigned long int comp_min=comp.min();
-        return (tmp_min<comp_min);
-        }
-
-int Time::operator>(Time comp)
-        {
-                unsigned long int tmp_min=this->min();
-                unsigned long int comp_min=comp.min();
-        return (tmp_min>comp_min);
+                Time tmp;
+                tmp.getTime();
+                int tmp_min=(((tmp.month-1)*43800)+((tmp.day-1)*1440)+(tmp.hour*60)+(tmp.minute));
+                int this_min=(((this->month-1)*43800)+((this->day-1)*1440)+(this->hour*60)+(this->minute));
+                if(this_min+MIN>=tmp_min)
+                        return 1;
+                else
+                        return 0;
         }

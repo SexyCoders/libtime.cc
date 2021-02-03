@@ -1,10 +1,18 @@
 #include <string>
 #include <vector>
+<<<<<<< HEAD
+=======
+#include <phpcpp.h>
+>>>>>>> 420b5c6e5f545982ca0e21c8f7c42ddbe472e0ce
 
 #ifndef TIME_H
 #define TIME_H
 
+<<<<<<< HEAD
 class Time
+=======
+class Time : public Php::Base
+>>>>>>> 420b5c6e5f545982ca0e21c8f7c42ddbe472e0ce
 	{
 		public:
 			int second;
@@ -14,6 +22,7 @@ class Time
 			int day;
 			int month;
 			int year;
+<<<<<<< HEAD
 
 			std::vector<std::string> _week_days;
 			std::vector<std::string> _months;
@@ -92,6 +101,61 @@ class Time
 				return this->month;
 				}
 			int get_year(void)
+=======
+			std::vector<std::string> WeekDays;
+			std::vector<std::string> Months;
+		public:
+			Time();
+			int operator==(Time);
+			int CheckBeforeMinutes(int);
+			std::string toString();
+			std::string toString(std::string);
+			void fromString(std::string);
+			Time getTime();
+			Php::Value getTimeString()
+				{
+					this->getTime();
+					std::string to_return=toString();
+				return to_return;
+				}
+			Php::Value saveTime(Php::Parameters &);
+			Time operator=(Time src)
+				{
+					this->second=src.second;
+					this->minute=src.minute;
+					this->hour=src.hour;
+					this->weekday=src.weekday;
+					this->day=src.day;
+					this->month=src.month;
+					this->year=src.year;
+				return *this;
+				}
+			inline int get_second(void)
+				{
+				return this->second;
+				}
+			inline int get_minute(void)
+				{
+				return this->minute;
+				}
+			inline int get_hour(void)
+				{
+				return this->hour;
+				}
+			inline int get_weekday(void)
+				{
+				return this->weekday;
+				}
+			inline int get_day(void)
+				{
+				return this->day;
+				}
+			inline int get_month(void)
+				{
+				return this->month;
+				}
+			inline int get_year(void)
+>>>>>>> 420b5c6e5f545982ca0e21c8f7c42ddbe472e0ce
 				{
 				return this->year;
 				}
