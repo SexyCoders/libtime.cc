@@ -2,6 +2,7 @@ NAME=time.cc
 HEADDIR=./headers/
 LIBDIR=/usr/local/lib/
 STATIC=/usr/local/lib/
+INCLUDE_DIR=/usr/local/include/
 CC=gcc
 LD=gcc
 C_FLAGS=-Wall -c -O2 -std=c++11 -fpic -I$(HEADDIR)
@@ -18,7 +19,7 @@ all: sources link_static link_shared
 sources:
 	@printf "...........................................................................\n";
 	@printf "Compiling time.cc\n";
-	@printf "To install run 'make install' as root after this is done\n";
+	@printf "To install run 'make install' and source the profile after this is done\n";
 	@printf "...........................................................................\n";
 	@printf "Compiling sources...\n";
 	$(CC) $(C_FLAGS) $(SOURCEDIR)*
@@ -39,13 +40,20 @@ link_shared:
 
 install:		
 	@printf "...........................................................................\n";
-	@printf "Installing libraries under /usr/local/lib/...";
+	@printf "Installing libraries and headers under /usr/local/...\n";
 	@if [ "$$USER" != "root" ]; then \
 		echo "Please run install as root! Aborting." >&2; \
 		exit 1; \
 	fi
+	@cp -v $(BLDDIR)lib$(NAME).so $(LIBDIR);
+	@cp -v $(BLDDIR)lib$(NAME).a $(STATIC);
+	@mkdir -p $(INCLUDE_DIR)$(NAME);
+	@cp -v $(HEADDIR)* $(INCLUDE_DIR)$(NAME);
+	echo "Setting variables...";
+	@cp -v ./libtime.sh /etc/profile.d;
 	@ldconfig;
 	@printf "Done!\n";
+	@printf "Please reboot or source the profile to export variables\n";
 	@printf "...........................................................................\n";
 	@printf "Thank you for using Time.cc\n";
 	@printf "Consider supporting us on https://gitlab.com/sexycoders\n";
