@@ -1,2 +1,2 @@
 #!/bin/bash
-export CPATH="/usr/local/include:$CPATH";
+export CPATH="/usr/local/include/time.cc:$CPATH";
