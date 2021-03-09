@@ -22,6 +22,9 @@ This makes it able to:
 
 # Installation
 
+The <b>default brach</b> is the latest <b>stable</b> release version.  
+If you wish to use the <b>development</b> version please change to the <b>master</b> branch.  
+
 To install please run the following inside the root directory of the downloaded source
 
 ```bash
@@ -85,8 +88,8 @@ This library is considered mature since all the possible features have been cove
 
 ## BUT
 
-### We will happily accept maintenance merges <b>AND new features</b> if they expand the functionality of the library.  
+We will happily accept <b>maintenance</b> merges <b>AND new features</b> if they expand the functionality of the library.  
 
-### We are also looking for translations of the documentation in other languages!!  
+We are also looking for translations of the <b>documentation in other languages</b>!!  
 
 Please contact us <a href="https://gitlab.com/dianshane">here</a>.
