@@ -79,12 +79,14 @@ toStringf("mdyl/","m",WEEKDAY_YES);
 - the year will be written out since we specified long format ("l option")
 - the time in millitary time (option "m")
 
-# Constibuting
+# Contributing
 
-This library is considered as mature since all the possible features have been covered.  
+This library is considered mature since all the possible features have been covered.  
 
 ## BUT
 
 ### We will happily accept maintenance merges <b>AND new features</b> if they expand the functionality of the library.  
+
+### We are also looking for translations of the documentation in other languages!!  
 
 Please contact us <a href="https://gitlab.com/dianshane">here</a>.
