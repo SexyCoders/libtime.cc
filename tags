@@ -4,3 +4,51 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AR	Makefile	/^AR=ar$/;"	m
+ARFLAGS	Makefile	/^ARFLAGS=rvs$/;"	m
+BLDDIR	Makefile	/^BLDDIR=.\/lib\/$/;"	m
+CC	Makefile	/^CC=gcc$/;"	m
+C_FLAGS	Makefile	/^C_FLAGS=-Wall -c -O2 -std=c++11 -fpic -I$(HEADDIR)$/;"	m
+HEADDIR	Makefile	/^HEADDIR=.\/headers\/$/;"	m
+INCLUDE_DIR	Makefile	/^INCLUDE_DIR=\/usr\/local\/include\/$/;"	m
+LD	Makefile	/^LD=gcc$/;"	m
+LD_FLAGS	Makefile	/^LD_FLAGS=-shared -lstdc++ -shared-libgcc$/;"	m
+LIBDIR	Makefile	/^LIBDIR=\/usr\/local\/lib\/$/;"	m
+NAME	Makefile	/^NAME=time.cc$/;"	m
+OBJ	Makefile	/^OBJ=.\/objects\/$/;"	m
+SHELL	Makefile	/^SHELL=\/bin\/bash$/;"	m
+SOURCEDIR	Makefile	/^SOURCEDIR=.\/sources\/$/;"	m
+STATIC	Makefile	/^STATIC=\/usr\/local\/lib\/$/;"	m
+TIME_H	headers/my_time.h	5;"	d
+Time	headers/my_time.h	/^			Time()$/;"	f	class:Time
+Time	headers/my_time.h	/^class Time$/;"	c
+_check_after_minutes	sources/operator_functions.cc	/^int Time::_check_after_minutes(int MIN)$/;"	f	class:Time
+_check_before_minutes	sources/operator_functions.cc	/^int Time::_check_before_minutes(int MIN)$/;"	f	class:Time
+_initialize	headers/my_time.h	/^			void _initialize()$/;"	f	class:Time
+_months	headers/my_time.h	/^			std::vector<std::string> _months;$/;"	m	class:Time
+_to_min	sources/time_functions.cc	/^unsigned long int Time::_to_min()$/;"	f	class:Time
+_week_days	headers/my_time.h	/^			std::vector<std::string> _week_days;$/;"	m	class:Time
+day	headers/my_time.h	/^			int day;$/;"	m	class:Time
+fromString	sources/time_functions.cc	/^void Time::fromString(std::string time_string)$/;"	f	class:Time
+getTime	sources/time_functions.cc	/^Time Time::getTime()$/;"	f	class:Time
+get_day	headers/my_time.h	/^			inline int get_day(void)$/;"	f	class:Time
+get_hour	headers/my_time.h	/^			inline int get_hour(void)$/;"	f	class:Time
+get_minute	headers/my_time.h	/^			inline int get_minute(void)$/;"	f	class:Time
+get_month	headers/my_time.h	/^			inline int get_month(void)$/;"	f	class:Time
+get_second	headers/my_time.h	/^			inline int get_second(void)$/;"	f	class:Time
+get_weekday	headers/my_time.h	/^			inline int get_weekday(void)$/;"	f	class:Time
+get_year	headers/my_time.h	/^			inline int get_year(void)$/;"	f	class:Time
+hour	headers/my_time.h	/^			int hour;$/;"	m	class:Time
+min	sources/time_functions.cc	/^unsigned long int Time::min()$/;"	f	class:Time
+minute	headers/my_time.h	/^			int minute;$/;"	m	class:Time
+month	headers/my_time.h	/^			int month;$/;"	m	class:Time
+operator <	sources/operators.cc	/^int Time::operator<(Time comp)$/;"	f	class:Time
+operator <	sources/operators.cc	/^int Time::operator<(int MIN)$/;"	f	class:Time
+operator =	sources/operators.cc	/^Time Time::operator=(Time src)$/;"	f	class:Time
+operator ==	sources/operators.cc	/^int Time::operator==(Time comp)$/;"	f	class:Time
+operator >	sources/operators.cc	/^int Time::operator>(Time comp)$/;"	f	class:Time
+operator >	sources/operators.cc	/^int Time::operator>(int MIN)$/;"	f	class:Time
+second	headers/my_time.h	/^			int second;$/;"	m	class:Time
+toString	sources/time_functions.cc	/^std::string Time::toString()$/;"	f	class:Time
+weekday	headers/my_time.h	/^			int weekday;$/;"	m	class:Time
+year	headers/my_time.h	/^			int year;$/;"	m	class:Time
