@@ -59,9 +59,9 @@ the formatting is easy:
 
 in the following order 
 
-<b>[format][l/s][delimiter]</b> e.g. "mdyl/"  
+#### <b>[format][l/s][delimiter]</b> e.g. "mdyl/"  
 
-:attention: format defaults to long and delimiter defaults to "-"
+:caution: format defaults to long and delimiter defaults to "-"
     
 ### time format argument
 - "m" -> military time 
