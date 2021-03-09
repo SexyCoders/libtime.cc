@@ -50,7 +50,11 @@ the formatting is easy:
 - time format is either "m"-military time or "c"-casual time
 - the flags WEEKDAY_YES and WEEKDAY_NO are used to specify if you wish to have the weeday written in the output
 
-For example toStringf("mdyl/","m",WEEKDAY_YES) will create a string by printing:
+For example 
+```c
+toStringf("mdyl/","m",WEEKDAY_YES);
+```
+ will create a string by printing:
 - the weekday since we used flag weekday_yes
 - the date in MONTH/DAY/YEAR format 
 - the year will be written out since we specified long format ("l option")
