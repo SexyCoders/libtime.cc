@@ -7,7 +7,7 @@ Time.cc was initially conceived for managing timestamps on web applications, lik
 
 This library doesnt aim to replace the highly mature tm struct. Infact internally we use exactly that!  
 
-## Our focus is <b>storing</b> a time for later use <b>not getting</b> the current time.   
+### Our focus is <b>storing</b> a time for later use <b>not getting</b> the current time.   
 # Features:
 This library provides two sets of functions:  
 The first set are simple wrapers over the almighty tm struct and simply provide an easier and simpler way to get the current time.  
