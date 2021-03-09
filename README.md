@@ -48,9 +48,26 @@ The "toStringf" function familly provides an easy way to create a string with yo
 There are functions to only print date, time weekday etc but also the generic "toStringf" that prints anything in any format.  
 
 the formatting is easy: 
-- date format is specified as "mdy(l/s)(delimiter)" -> format defaults to long and delimiter defaults to "-"
-- time format is either "m"-military time or "c"-casual time
-- the flags WEEKDAY_YES and WEEKDAY_NO are used to specify if you wish to have the weeday written in the output
+
+### date format accepts following arguments
+- d -> day
+- m -> month
+- y -> year
+- l -> long
+- s -> short
+- delimiter
+
+in the following order 
+
+<b>[format][l/s][delimiter]</b> e.g. "mdyl/"  
+
+:attention: format defaults to long and delimiter defaults to "-"
+    
+### time format argument
+- "m" -> military time 
+- "c" -> casual time
+
+:information_source: the flags WEEKDAY_YES and WEEKDAY_NO are used to specify if you wish to have the weeday written in the output
 
 For example 
 ```c
