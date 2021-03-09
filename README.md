@@ -43,7 +43,9 @@ Time.cc provides all mathematical operators and ports them to the Time object.
 You can compare add, substract etc between Time objects freely.  
 
 ## formated output functions
-the toStringf function familly provides an easy way to create a string with your desired formatting for use in your application.
+The "toStringf" function familly provides an easy way to create a string with your desired formatting for use in your application.
+
+There are functions to only print date, time weekday etc but also the generic "toStringf" that prints anything in any format.  
 
 the formatting is easy: 
 - date format is specified as "mdy(l/s)(delimiter)" -> format defaults to long and delimiter defaults to "-"
