@@ -61,7 +61,7 @@ in the following order
 
 #### <b>[format][l/s][delimiter]</b> e.g. "mdyl/"  
 
-:caution: format defaults to long and delimiter defaults to "-"
+:warning: format defaults to long and delimiter defaults to "-"
     
 ### time format argument
 - "m" -> military time 
