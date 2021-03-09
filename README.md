@@ -77,7 +77,7 @@ toStringf("mdyl/","m",WEEKDAY_YES);
 - the weekday since we used flag weekday_yes
 - the date in MONTH/DAY/YEAR format 
 - the year will be written out since we specified long format ("l option")
-- the time in millitary time (option "m")
+- the time in military time (option "m")
 
 # Contributing
 
