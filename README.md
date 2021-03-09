@@ -29,3 +29,30 @@ make && make install
 ```
 
 :information_source: Libraries will be installed under usr/local/lib and headers under usr/local/include.
+
+# Functions
+
+The library provides three main function types:
+
+## time functions
+- getTime -> a very friendly wraper to the tm struct that get current time and stores it in the Time object
+- fromString -> loads a Time object from a string (semicolon seperation OBLIGATORY see store())
+
+## operators
+Time.cc provides all mathematical operators and ports them to the Time object.  
+You can compare add, substract etc between Time objects freely.  
+
+## formated output functions
+the toStringf function familly provides an easy way to create a string with your desired formatting for use in your application.
+
+the formatting is easy: 
+- date format is specified as "mdy(l/s)(delimiter)" -> format defaults to long and delimiter defaults to "-"
+- time format is either "m"-military time or "c"-casual time
+- the flags WEEKDAY_YES and WEEKDAY_NO are used to specify if you wish to have the weeday written in the output
+
+For example toStringf("mdyl/","m",WEEKDAY_YES) will create a string by printing:
+- the weekday since we used flag weekday_yes
+- the date in MONTH/DAY/YEAR format 
+- the year will be written out since we specified long format ("l option")
+- the time in millitary time (option "m")
+
