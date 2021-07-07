@@ -29,8 +29,10 @@ class Time
 			//output functions
 			std::string toString();
 			//formated output
-			std::string DatetoStringf(const char* format);
-			std::string TimetoStringf(const char* format);
+			//deprecated! USE toStringf
+			//std::string DatetoStringf(const char* format);
+			//deprecated! USE toStringf
+			//std::string TimetoStringf(const char* format);
 			std::string toStringf(const char* date_format,const char* time_format,int week_day_flag);
 			//format has to be along the lines of dmyl; date month year long (or s->short) and the delimiter for date
 			//std::string toString(std::string);

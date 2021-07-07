@@ -48,7 +48,9 @@ You can compare add, substract etc between Time objects freely.
 ## formated output functions
 The "toStringf" function familly provides an easy way to create a string with your desired formatting for use in your application.
 
-There are functions to only print date, time weekday etc but also the generic "toStringf" that prints anything in any format.  
+Please note that WE HAVE REMOVED DateToStringf and TimeToSringf. Use the generic toStringf for everything!
+
+The generic "toStringf" prints anything in any format.  
 
 the formatting is easy: 
 

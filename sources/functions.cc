@@ -33,34 +33,43 @@ std::string Time::toString()
         return DATE;
         }
 
-std::string Time::DatetoStringf(const char* format)
+std::string Time::toStringf(const char* format,const char* time_format,int week_day_flag)
         {
                 std::string DATE;
+                if(week_day_flag)
+                        DATE+=this->_week_days[this->weekday]+" ";
                 int argc=strlen(format);
-                if((argc<4||argc>5))
-                        {
-                                fprintf(stderr,"Invalid Parameter Number!");
-                                return "Invalid Parameter Number";
-                        }
-                char delim=argc==5?format[5]:'-';
-                for(int j=0;j<3;j++)
+                char delim;
+                if(format[3]=='s')
+                        delim=argc==5?format[4]:'-';
+                else 
+                        delim=' ';
+                for(int j=0;j<argc-2;j++)
                         {
                                 switch(format[j])
                                         {
                                                 case 'y':
                                                         DATE+=format[4]=='s'?std::to_string(this->year).substr(2):std::to_string(this->year);
-                                                        j!=3?DATE+=delim:0;
+                                                        j!=2?DATE+=delim:"";
                                                         break;
                                                 case 'm':
-                                                        DATE+=std::to_string(this->month);
-                                                        j!=3?DATE+=delim:0;
+                                                        if(format[3]=='s')
+                                                                DATE+=std::to_string(this->month);
+                                                        else
+                                                                DATE+=this->_months[this->month];
+                                                        j!=2?DATE+=delim:"";
                                                         break;
                                                 case 'd':
                                                         DATE+=std::to_string(this->day);
-                                                        j!=3?DATE+=delim:0;
+                                                        j!=2?DATE+=delim:"";
                                                         break;
                                         }
                         }
+                //DATE+=" ";
+                if(!strcmp(time_format,"m"))
+                        DATE+=std::to_string(this->hour)+std::to_string(this->minute);
+                else if(!strcmp(time_format,"c"))
+                        DATE+=std::to_string(this->hour)+":"+std::to_string(this->minute);
         return DATE;
         }
 
