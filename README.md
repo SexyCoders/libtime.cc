@@ -39,7 +39,7 @@ The library provides three main function types:
 
 ## time functions
 - getTime -> a very friendly wraper to the tm struct that get current time and stores it in the Time object
-- fromString -> loads a Time object from a string (semicolon seperation OBLIGATORY see store())
+- fromString -> loads a Time object from a string (semicolon seperation OBLIGATORY)
 
 ## operators
 Time.cc provides all mathematical operators and ports them to the Time object.  
@@ -92,6 +92,6 @@ This library is considered mature since all the possible features have been cove
 
 We will happily accept <b>maintenance</b> merges <b>AND new features</b> if they expand the functionality of the library.  
 
-We are also looking for translations of the <b>documentation in other languages</b>!!  
+We are also looking for translations <b>to other languages (documentation or code)</b>!!  
 
 Please contact us <a href="https://gitlab.com/dianshane">here</a>.
