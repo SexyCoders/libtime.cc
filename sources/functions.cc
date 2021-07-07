@@ -40,10 +40,16 @@ std::string Time::toStringf(const char* format,const char* time_format,int week_
                         DATE+=this->_week_days[this->weekday]+" ";
                 int argc=strlen(format);
                 char delim;
-                if(format[3]=='s')
-                        delim=argc==5?format[4]:'-';
-                else 
-                        delim=' ';
+                for(int j=0;j<argc-1;j++)
+                        {
+                                if(format[j]=='s')
+                                        {
+                                                delim=argc==5?format[4]:'-';
+                                                break;
+                                        }
+                                else 
+                                        delim=' ';
+                        }
                 for(int j=0;j<argc-2;j++)
                         {
                                 switch(format[j])
@@ -56,7 +62,7 @@ std::string Time::toStringf(const char* format,const char* time_format,int week_
                                                         if(format[3]=='s')
                                                                 DATE+=std::to_string(this->month);
                                                         else
-                                                                DATE+=this->_months[this->month];
+                                                                DATE+=this->_months[this->month-1];
                                                         j!=2?DATE+=delim:"";
                                                         break;
                                                 case 'd':
